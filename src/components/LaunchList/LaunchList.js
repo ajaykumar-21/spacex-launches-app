@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { fetchLaunches } from "../services/spacexApi";
-import LaunchItem from "./LaunchItem";
-import SearchBar from "./SearchBar";
-import Filters from "./Filters";
+import { fetchLaunches } from "../../services/spacexApi";
+import LaunchItem from "../LaunchItem/LaunchItem";
+import SearchBar from "../SearchBar/SearchBar";
+import Filters from "../Filters/Filters";
 
 const LaunchList = () => {
   const [launches, setLaunches] = useState([]);

@@ -1,12 +1,14 @@
-import React from 'react';
+import React from "react";
 
 const Filters = ({ setYearFilter, setStatusFilter }) => {
   return (
     <div className="filters">
       <select onChange={(e) => setYearFilter(e.target.value)}>
         <option value="">All Years</option>
-        {[...Array(15).keys()].map(i => (
-          <option key={i} value={2006 + i}>{2006 + i}</option>
+        {[...Array(15).keys()].map((i) => (
+          <option key={i} value={2006 + i}>
+            {2006 + i}
+          </option>
         ))}
       </select>
 

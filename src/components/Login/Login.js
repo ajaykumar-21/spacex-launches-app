@@ -24,7 +24,7 @@ function Login() {
 
     setSubmitButtonDisabled(true);
     signInWithEmailAndPassword(auth, values.email, values.pass)
-      .then(async (res) => {
+      .then(() => {
         setSubmitButtonDisabled(false);
         navigate("/");
       })

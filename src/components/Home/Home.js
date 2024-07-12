@@ -1,10 +1,7 @@
 import React from "react";
-// import { Link } from "react-router-dom";
-// import styles from "./Home.module.css";
-import LaunchList from "../LaunchList";
-// import Navbar from "../Navbar/Navbar";
+import LaunchList from "../LaunchList/LaunchList";
 
-function Home(props) {
+function Home() {
   return (
     <div>
       <LaunchList />
