@@ -1,0 +1,15 @@
+.link {
+  color: #2f2626;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  height: 50px;
+  width: auto;
+  padding: 0 10px 0 10px;
+}

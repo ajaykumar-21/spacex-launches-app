@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { fetchLaunches } from '../services/spacexApi';
-import LaunchItem from './LaunchItem';
-import SearchBar from './SearchBar';
-import Filters from './Filters';
+import React, { useState, useEffect } from "react";
+import { fetchLaunches } from "../services/spacexApi";
+import LaunchItem from "./LaunchItem";
+import SearchBar from "./SearchBar";
+import Filters from "./Filters";
 
 const LaunchList = () => {
   const [launches, setLaunches] = useState([]);
   const [filteredLaunches, setFilteredLaunches] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [yearFilter, setYearFilter] = useState('');
-  const [statusFilter, setStatusFilter] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
+  const [yearFilter, setYearFilter] = useState("");
+  const [statusFilter, setStatusFilter] = useState("");
 
   useEffect(() => {
     const getLaunches = async () => {
@@ -24,15 +24,17 @@ const LaunchList = () => {
     let filtered = launches;
 
     if (yearFilter) {
-      filtered = filtered.filter(launch => launch.launch_year === yearFilter);
+      filtered = filtered.filter((launch) => launch.launch_year === yearFilter);
     }
 
     if (statusFilter) {
-      filtered = filtered.filter(launch => launch.launch_success === (statusFilter === 'success'));
+      filtered = filtered.filter(
+        (launch) => launch.launch_success === (statusFilter === "success")
+      );
     }
 
     if (searchTerm) {
-      filtered = filtered.filter(launch => 
+      filtered = filtered.filter((launch) =>
         launch.mission_name.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
@@ -42,10 +44,14 @@ const LaunchList = () => {
 
   return (
     <div>
+      <h1>Spacex Laucher</h1>
       <SearchBar setSearchTerm={setSearchTerm} />
-      <Filters setYearFilter={setYearFilter} setStatusFilter={setStatusFilter} />
+      <Filters
+        setYearFilter={setYearFilter}
+        setStatusFilter={setStatusFilter}
+      />
       <div className="launch-list">
-        {filteredLaunches.map(launch => (
+        {filteredLaunches.map((launch) => (
           <LaunchItem key={launch.mission_name} launch={launch} />
         ))}
       </div>

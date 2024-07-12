@@ -1,10 +1,8 @@
 import axios from 'axios';
 
-const API_URL = 'https://api.spacexdata.com/v3/launches';
-
 export const fetchLaunches = async () => {
   try {
-    const response = await axios.get(API_URL);
+    const response = await axios.get('https://api.spacexdata.com/v3/launches');
     return response.data;
   } catch (error) {
     console.error("Error fetching the SpaceX launches", error);
