@@ -1,0 +1,44 @@
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.launch-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.launch-item {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 10px;
+  padding: 20px;
+  width: 200px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.launch-item img {
+  width: 100%;
+  height: auto;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.filters select {
+  margin: 0 10px;
+  padding: 5px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 80%;
+  max-width: 400px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
