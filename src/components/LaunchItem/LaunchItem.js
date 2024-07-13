@@ -2,7 +2,8 @@ import React from "react";
 
 const LaunchItem = ({ launch }) => {
   return (
-    <div className="launch-item"> // this is for list of cards.
+    <div className="launch-item">
+      {" "}
       <img src={launch.links.mission_patch} alt={launch.mission_name} />
       <h2>{launch.mission_name}</h2>
       <p>{new Date(launch.launch_date_local).toLocaleDateString()}</p>
