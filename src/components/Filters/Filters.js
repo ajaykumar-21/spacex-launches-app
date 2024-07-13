@@ -5,7 +5,7 @@ const Filters = ({ setYearFilter, setStatusFilter }) => {
     <div className="filters">
       <select onChange={(e) => setYearFilter(e.target.value)}>
         <option value="">All Years</option>
-        {[...Array(15).keys()].map((i) => (
+        {[...Array(15).keys()].map((i) => ( // to start the year from 2006 to 2025.
           <option key={i} value={2006 + i}>
             {2006 + i}
           </option>

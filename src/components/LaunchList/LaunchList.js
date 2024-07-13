@@ -24,18 +24,18 @@ const LaunchList = () => {
     let filtered = launches;
 
     if (yearFilter) {
-      filtered = filtered.filter((launch) => launch.launch_year === yearFilter);
+      filtered = filtered.filter((launch) => launch.launch_year === yearFilter); // If 'yearFilter' is provided, filters the 'filtered' array to include only launches. where the 'launch_year' matches the 'yearFilter'.
     }
 
     if (statusFilter) {
       filtered = filtered.filter(
-        (launch) => launch.launch_success === (statusFilter === "success")
+        (launch) => launch.launch_success === (statusFilter === "success") // Filters the 'filtered' array to include only launches where 'launch_success' matches. the boolean value of whether 'statusFilter' is success.
       );
     }
 
     if (searchTerm) {
       filtered = filtered.filter((launch) =>
-        launch.mission_name.toLowerCase().includes(searchTerm.toLowerCase())
+        launch.mission_name.toLowerCase().includes(searchTerm.toLowerCase()) // contains the 'searchTerm', ignoring case differences.
       );
     }
 
