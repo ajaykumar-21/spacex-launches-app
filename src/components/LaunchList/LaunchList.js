@@ -13,11 +13,11 @@ const LaunchList = () => {
 
   useEffect(() => {
     const getLaunches = async () => {
-      const data = await fetchLaunches();
+      const data = await fetchLaunches(); // Calls the fetchLaunches function to retrieve data asynchronously and assigns the result to the variable 'data'.
       setLaunches(data);
       setFilteredLaunches(data);
     };
-    getLaunches();
+    getLaunches(); // Invokes the getLaunches function to initiate the fetching of launch data when this script runs.
   }, []);
 
   useEffect(() => {

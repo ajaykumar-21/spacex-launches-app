@@ -17,20 +17,22 @@ function Login() {
 
   const handleSubmission = () => {
     if (!values.email || !values.pass) {
-      setErrorMsg("Fill all fields");
+      setErrorMsg("Fill all fields"); // If both or one of field is empty it will throw error.
       return;
     }
     setErrorMsg("");
 
     setSubmitButtonDisabled(true);
-    signInWithEmailAndPassword(auth, values.email, values.pass)
+    signInWithEmailAndPassword(auth, values.email, values.pass) // Initiates the sign-in process using Firebase Authentication with the provided email and password.
       .then(() => {
-        setSubmitButtonDisabled(false);
-        navigate("/");
+        // This block executes if the sign-in is successful.
+        setSubmitButtonDisabled(false); // Re-enables the submit button after the sign-in process is complete.
+        navigate("/"); // Navigates the user to the home page ("/") after successful sign-in.
       })
       .catch((err) => {
+        // This block executes if there's an error during the sign-in process.
         setSubmitButtonDisabled(false);
-        setErrorMsg(err.message);
+        setErrorMsg(err.message); // Sets the error message to display to the user, based on the error received.
       });
   };
   return (
@@ -58,7 +60,7 @@ function Login() {
             Login
           </button>
           <p>
-            Already have an account?{" "}
+            Don’t have an account?{" "}
             <span>
               <Link to="/signup">Sign up</Link>
             </span>

@@ -24,16 +24,14 @@ function Signup() {
     }
     setErrorMsg("");
     setSubmitButtonDisabled(true);
-    createUserWithEmailAndPassword(auth, values.email, values.pass)
+    createUserWithEmailAndPassword(auth, values.email, values.pass) // Attempts to create a new user with the provided email and password using Firebase Authentication.
       .then(() => {
+        // Executes if the user account is successfully created.
         setSubmitButtonDisabled(false);
-        // const user = res.user;
-        // await updateProfile(user, {
-        //   displayName: values.name,
-        // });
-        navigate("/");
+        navigate("/"); // Redirects the user to the home page ("/") after successful account creation.
       })
       .catch((err) => {
+        // Executes if there is an error during the account creation process.
         setSubmitButtonDisabled(false);
         setErrorMsg(err.message);
       });
